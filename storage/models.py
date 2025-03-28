@@ -4,7 +4,7 @@ from .database import Base
 import enum
 
 
-class Stockstatus(enum.Enum):
+class StockStatus(enum.Enum):
     in_stock = "in_stock"
     out_of_stock = "out_of_stock"
     pre_order = "pre_order"
@@ -18,5 +18,5 @@ class Product(Base):
     description = Column(String, nullable=True)
     category = Column(String, nullable=False)
     price = Column(Float, nullable=False)
-    stock_status = Column(Enum(Stockstatus, names="stock_status"), nullable=False, default=Stockstatus.in_stock)
+    stock_status = Column(Enum(StockStatus, names="stock_status"), nullable=False, default=StockStatus.in_stock)
     sku = Column(String, unique=True, nullable=False)
