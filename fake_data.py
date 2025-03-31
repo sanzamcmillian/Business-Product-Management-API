@@ -42,4 +42,4 @@ def generate_fake_products(n=10):
 
 # Run the function
 if __name__ == "__main__":
-    generate_fake_products(10)  # Generate 10 fake products
+    generate_fake_products(30)  # Generate 10 fake products
