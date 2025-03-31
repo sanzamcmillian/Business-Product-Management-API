@@ -15,7 +15,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: 🔧 Set up Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.10"
@@ -29,6 +29,7 @@ jobs:
 
       - name: Set up Database (SQLite)
         run: |
+          source venv/bin/activate
           touch test.db
           python -c "from storage.database import Base, engine; Base.metadata.create_all(bind=engine)"
 
