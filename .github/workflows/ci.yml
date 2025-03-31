@@ -36,4 +36,5 @@ jobs:
       - name: 🚀 Run Tests
         run: |
           source venv/bin/activate
+          PYTHONPATH=.
           pytest --maxfail=1 --disable-warnings --tb=short
