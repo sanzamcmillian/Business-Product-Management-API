@@ -20,17 +20,17 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: 📦 Install Dependencies
+      - name: Install Dependencies
         run: |
           python -m venv venv
           source venv/bin/activate
           pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: 🛠️ Set up Database (SQLite)
+      - name: Set up Database (SQLite)
         run: |
           touch test.db
-          python -c "from database import Base, engine; Base.metadata.create_all(bind=engine)"
+          python -c "from storage.database import Base, engine; Base.metadata.create_all(bind=engine)"
 
       - name: 🚀 Run Tests
         run: |
